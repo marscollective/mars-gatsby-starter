@@ -35,7 +35,7 @@ collections:
           format: YYYY-MM-DD HH:mm:ss,
         }
       - { label: Image, name: image, widget: image }
-      - { label: Tags, name: tags, widget: string }
+      - { label: Tags, name: tags, widget: list }
       - { label: Description, name: description, widget: text }
       - { label: Body, name: body, widget: markdown }
 
