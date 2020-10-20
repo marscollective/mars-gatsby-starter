@@ -1,0 +1,19 @@
+version: 2
+updates:
+  - package-ecosystem: npm
+    directory: '/'
+    schedule:
+      interval: 'daily'
+    open-pull-requests-limit: 50
+    target-branch: main
+    versioning-strategy: increase
+    commit-message:
+      prefix: '⬆️ [skip ci]'
+
+  - package-ecosystem: 'github-actions'
+    directory: '/'
+    schedule:
+      interval: 'daily'
+    target-branch: main
+    commit-message:
+      prefix: '⬆️ [skip ci]'
