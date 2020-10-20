@@ -30,7 +30,8 @@ export const query = graphql`
       frontmatter {
         title
         description
-        date(locale: "pt-br", formatString: "DD [de] MMMM [de] YYYY")
+        date(locale: "en", formatString: "MMMM DD, YYYY")
+        # date(locale: "pt-br", formatString: "DD [de] MMMM [de] YYYY")
         image {
           childImageSharp {
             fluid(maxWidth: 1216, quality: 90) {
