@@ -3,6 +3,7 @@ import { useStaticQuery, graphql } from 'gatsby'
 import Layout from '@layout'
 import SEO from '@seo'
 import Posts from '@components/posts'
+import Contact from '@components/contact'
 
 const IndexPage = () => {
   const { allMarkdownRemark } = useStaticQuery(
@@ -41,6 +42,7 @@ const IndexPage = () => {
     <Layout>
       <SEO title="Home" />
       <Posts title="Posts" posts={posts} />
+      <Contact title="Contact" />
     </Layout>
   )
 }

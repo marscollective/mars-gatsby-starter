@@ -19,6 +19,9 @@ module.exports = {
           md: '2rem'
         }
       },
+      minHeight: {
+        64: '16rem'
+      },
       backgroundColor: {
         muted: '#dbdbdb',
         default: '#fafafa'

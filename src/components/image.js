@@ -17,12 +17,15 @@ export const Image = ({ alt, className, image }) =>
 
 export const Background = ({ className, children, image }) =>
   !!image?.childImageSharp ? (
-    <BackgroundImage fluid={image.childImageSharp.fluid} className={className}>
+    <BackgroundImage
+      fluid={image.childImageSharp.fluid}
+      className={`${className} min-h-64 md:h-full`}
+    >
       {children}
     </BackgroundImage>
   ) : (
     <div
-      className={`${className} bg-cover bg-center`}
+      className={`${className} bg-cover bg-center min-h-64 md:h-full`}
       style={{
         backgroundImage: `url(${image})`
       }}
