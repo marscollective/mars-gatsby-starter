@@ -1,7 +1,9 @@
 import CMS from 'netlify-cms-app'
-import NotFoundPreview from './templates/not-found'
 import BlogPostPreview from './templates/blog-post'
+import ContactPreview from './templates/contact'
+import NotFoundPreview from './templates/not-found'
 import '@styles/tailwind.scss'
 
-CMS.registerPreviewTemplate('not-found', NotFoundPreview)
 CMS.registerPreviewTemplate('posts', BlogPostPreview)
+CMS.registerPreviewTemplate('contact', ContactPreview)
+CMS.registerPreviewTemplate('not-found', NotFoundPreview)

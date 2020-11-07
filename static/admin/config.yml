@@ -39,13 +39,21 @@ collections:
       - { label: Description, name: description, widget: text }
       - { label: Body, name: body, widget: markdown }
 
-  - name: pages
-    label: Pages
+  - name: sections
+    label: Sections
     media_folder: ''
     public_folder: ''
     sortable_fields: []
     files:
-      - file: content/pages/not-found/index.md
+      - file: content/sections/contact/index.md
+        label: Contact
+        name: contact
+        fields:
+          - { label: key, name: key, widget: hidden, default: contact }
+          - { label: Title, name: title, widget: string }
+          - { label: Image, name: image, widget: image }
+
+      - file: content/sections/not-found/index.md
         label: '404'
         name: not-found
         fields:

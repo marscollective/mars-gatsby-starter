@@ -2,23 +2,23 @@ import React from 'react'
 import Img from 'gatsby-image'
 import BackgroundImage from 'gatsby-background-image'
 
-export const Image = ({ alt, className, image }) =>
-  !!image?.childImageSharp ? (
-    <Img fluid={image.childImageSharp.fluid} alt={alt} className={className} />
+export const Image = ({ alt, className, src }) =>
+  !!src?.childImageSharp ? (
+    <Img fluid={src.childImageSharp.fluid} alt={alt} className={className} />
   ) : (
     <div className={`${className} overflow-hidden`}>
       <img
-        src={image}
+        src={src}
         alt={alt}
         className="object-cover object-center w-full h-full"
       />
     </div>
   )
 
-export const Background = ({ className, children, image }) =>
-  !!image?.childImageSharp ? (
+export const Background = ({ className, children, src }) =>
+  !!src?.childImageSharp ? (
     <BackgroundImage
-      fluid={image.childImageSharp.fluid}
+      fluid={src.childImageSharp.fluid}
       className={`${className} min-h-64 md:h-full`}
     >
       {children}
@@ -27,7 +27,7 @@ export const Background = ({ className, children, image }) =>
     <div
       className={`${className} bg-cover bg-center min-h-64 md:h-full`}
       style={{
-        backgroundImage: `url(${image})`
+        backgroundImage: `url(${src})`
       }}
     >
       {children}
