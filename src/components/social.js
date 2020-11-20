@@ -24,19 +24,17 @@ const Social = ({ socialLinks }) => (
 
       return (
         <li key={i}>
-          {url && (
-            <a
-              href={url}
-              title={label}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-default hover:text-highLight"
-            >
-              <div>
-                <Icon size="22px" />
-              </div>
-            </a>
-          )}
+          <a
+            href={url}
+            title={label}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-default hover:text-highLight"
+          >
+            <div>
+              <Icon size="22px" />
+            </div>
+          </a>
         </li>
       )
     })}
