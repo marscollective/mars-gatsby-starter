@@ -30,7 +30,7 @@ module.exports = {
         body: 'Rubik, sans-serif'
       },
       textColor: {
-        highLight: '#0d90d6',
+        highLight: '#0d3770',
         default: '#262626'
       }
     },
