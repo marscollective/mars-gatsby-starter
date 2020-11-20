@@ -1,12 +1,23 @@
 const settings = require(`./content/settings`)
+const {
+  title,
+  shortTitle,
+  description,
+  siteUrl,
+  favicon,
+  lang,
+  gtmID,
+  socialLinks,
+  pwaColors: { backgroundColor, themeColor }
+} = settings
 
 module.exports = {
   siteMetadata: {
-    title: settings.title,
-    description: settings.description,
-    siteUrl: settings.siteUrl,
-    lang: settings.lang,
-    socialLinks: settings.socialLinks
+    title: title,
+    description: description,
+    siteUrl: siteUrl,
+    lang: lang,
+    socialLinks: socialLinks
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -68,13 +79,13 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: settings.title,
-        short_name: settings.shortTitle,
+        name: title,
+        short_name: shortTitle,
         start_url: `/`,
-        background_color: settings.backgroundColor,
-        theme_color: settings.themeColor,
+        background_color: backgroundColor,
+        theme_color: themeColor,
         display: `fullscreen`,
-        icon: `content/settings/${settings.favicon}`,
+        icon: `content/settings/${favicon}`,
         icon_options: {
           purpose: `maskable`
         }
@@ -83,7 +94,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-google-tagmanager`,
       options: {
-        id: settings.gtmID,
+        id: gtmID,
         includeInDevelopment: false,
         defaultDataLayer: { platform: `gatsby` }
       }
@@ -92,7 +103,7 @@ module.exports = {
       resolve: `gatsby-plugin-netlify-cms`,
       options: {
         htmlTitle: `Content Manager`,
-        htmlFavicon: `content/settings/${settings.favicon}`,
+        htmlFavicon: `content/settings/${favicon}`,
         modulePath: `${__dirname}/src/cms/cms.js`
       }
     }

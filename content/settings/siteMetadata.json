@@ -4,8 +4,7 @@
   "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent at tristique eros, vitae finibus velit. Curabitur non enim mollis, posuere tortor vitae, pellentesque leo. Cras egestas varius nibh, et euismod metus volutpat ut. Pellentesque at nisl eu arcu accumsan mollis. Donec est ipsum, molestie quis ornare id, accumsan id odio.",
   "siteUrl": "https://starter.marscollective.co",
   "favicon": "icon.png",
-  "backgroundColor": "#fafafa",
-  "themeColor": "#0d90d6",
+  "pwaColors": { "backgroundColor": "#fafafa", "themeColor": "#0d90d6" },
   "lang": "en",
   "gtmID": "GTM-XXXXXX",
   "socialLinks": [

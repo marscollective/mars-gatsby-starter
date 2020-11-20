@@ -6,8 +6,7 @@ const settings = {
   description: siteMetadata.description,
   siteUrl: siteMetadata.siteUrl,
   favicon: siteMetadata.favicon,
-  backgroundColor: siteMetadata.backgroundColor,
-  themeColor: siteMetadata.themeColor,
+  pwaColors: siteMetadata.pwaColors,
   lang: siteMetadata.lang,
   gtmID: siteMetadata.gtmID,
   socialLinks: siteMetadata.socialLinks
