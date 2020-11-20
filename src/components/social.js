@@ -19,15 +19,15 @@ const Icons = {
 
 const Social = ({ socialLinks }) => (
   <ul className="flex space-x-8 m-0 p-0 list-none">
-    {socialLinks.map((social, i) => {
-      const Icon = Icons[social.label]
+    {socialLinks.map(({ label, url }, i) => {
+      const Icon = Icons[label]
 
       return (
         <li key={i}>
-          {social.url && (
+          {url && (
             <a
-              href={social.url}
-              title={social.label}
+              href={url}
+              title={label}
               target="_blank"
               rel="noopener noreferrer"
               className="text-default hover:text-highLight"

@@ -19,11 +19,12 @@ const NotFoundPage = () => {
   )
 
   const notFound = markdownRemark.frontmatter
+  const { message, title } = notFound
 
   return (
     <Layout>
-      <SEO title={notFound.title} />
-      <NotFound message={notFound.message} title={notFound.title} />
+      <SEO title={title} />
+      <NotFound message={message} title={title} />
     </Layout>
   )
 }

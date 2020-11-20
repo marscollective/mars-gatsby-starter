@@ -16,7 +16,8 @@ const IndexPage = () => {
           edges {
             node {
               frontmatter {
-                date(formatString: "DD [de] MMMM [de] YYYY", locale: "pt")
+                date(locale: "en", formatString: "MMMM DD, YYYY")
+                # date(locale: "pt-br", formatString: "DD [de] MMMM [de] YYYY")
                 title
                 image {
                   childImageSharp {
@@ -50,12 +51,13 @@ const IndexPage = () => {
 
   const posts = data.posts.edges
   const contact = data.contact.frontmatter
+  const { image, title } = contact
 
   return (
     <Layout>
       <SEO title="Home" />
       <Posts title="Posts" posts={posts} />
-      <Contact title={contact.title} image={contact.image} />
+      <Contact title={title} image={image} />
     </Layout>
   )
 }

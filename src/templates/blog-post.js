@@ -6,19 +6,22 @@ import Post from '@components/post'
 
 const BlogPost = ({ data }) => {
   const post = data.post
-  const postBody = <div dangerouslySetInnerHTML={{ __html: post.html }} />
+  const {
+    frontmatter: { date, description, image, title },
+    html,
+    timeToRead
+  } = post
+  const body = <div dangerouslySetInnerHTML={{ __html: html }} />
 
   return (
     <Layout>
-      <SEO
-        title={post.frontmatter.title}
-        description={post.frontmatter.description}
-      />
+      <SEO title={title} description={description} />
       <Post
-        body={postBody}
-        date={post.frontmatter.date}
-        image={post.frontmatter.image}
-        title={post.frontmatter.title}
+        body={body}
+        date={date}
+        image={image}
+        title={title}
+        timeToRead={timeToRead}
       />
     </Layout>
   )
