@@ -42,7 +42,7 @@
     "typeface-rubik": "^1.1.13"
   },
   "devDependencies": {
-    "prettier": "^2.1.2"
+    "prettier": "^2.2.0"
   },
   "engines": {
     "node": "12.x"
