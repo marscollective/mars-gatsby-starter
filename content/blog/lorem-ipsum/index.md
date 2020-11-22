@@ -3,10 +3,6 @@ key: blog-post
 title: Lorem ipsum
 date: 2020-04-02 21:00:00
 image: image.jpg
-description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent at tristique eros, vitae finibus velit. Curabitur non enim mollis, posuere tortor vitae, pellentesque leo. Cras egestas varius nibh, et euismod metus volutpat ut. Pellentesque at nisl eu arcu accumsan mollis. Donec est ipsum, molestie quis ornare id, accumsan id odio. Integer molestie urna quis arcu bibendum ultrices. Aliquam sed ultricies dolor. Maecenas ornare porttitor ornare. Sed ultricies bibendum dolor, vitae aliquam velit dignissim porta.
-tags:
-  - lorem
-  - ipsum
 ---
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent at tristique eros, vitae finibus velit. Curabitur non enim mollis, posuere tortor vitae, pellentesque leo. Cras egestas varius nibh, et euismod metus volutpat ut. Pellentesque at nisl eu arcu accumsan mollis. Donec est ipsum, molestie quis ornare id, accumsan id odio. Integer molestie urna quis arcu bibendum ultrices. Aliquam sed ultricies dolor. Maecenas ornare porttitor ornare. Sed ultricies bibendum dolor, vitae aliquam velit dignissim porta. Maecenas quis lorem ac purus hendrerit egestas. Cras ut interdum nibh, sed placerat leo. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Proin et nibh dictum, tempor dolor sit amet, rutrum diam.

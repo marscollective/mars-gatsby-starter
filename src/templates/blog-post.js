@@ -7,7 +7,8 @@ import Post from '@components/post'
 const BlogPost = ({ data }) => {
   const post = data.post
   const {
-    frontmatter: { date, description, image, title },
+    excerpt,
+    frontmatter: { date, image, title },
     html,
     timeToRead
   } = post
@@ -15,7 +16,7 @@ const BlogPost = ({ data }) => {
 
   return (
     <Layout>
-      <SEO title={title} description={description} />
+      <SEO title={title} description={excerpt} />
       <Post
         body={body}
         date={date}
@@ -30,9 +31,9 @@ const BlogPost = ({ data }) => {
 export const query = graphql`
   query($slug: String!) {
     post: markdownRemark(fields: { slug: { eq: $slug } }) {
+      excerpt(pruneLength: 400)
       frontmatter {
         title
-        description
         date(locale: "en", formatString: "MMMM DD, YYYY")
         # date(locale: "pt-br", formatString: "DD [de] MMMM [de] YYYY")
         image {
