@@ -4,7 +4,7 @@ import { Background } from '@components/image'
 
 const Contact = ({ image, title }) => (
   <section className="grid md:grid-cols-2 gap-8 container">
-    <Background src={image} className="order-last md:order-first" />
+    <Background src={image} className="order-last md:order-first min-h-64" />
     <div className="md:my-12">
       <h2 className="mt-0 mb-8">{title}</h2>
       <Form title="Contact" />

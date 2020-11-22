@@ -5,12 +5,15 @@ module.exports = {
       container: {
         center: true,
         padding: {
-          default: '1rem',
+          DEFAULT: '1rem',
           md: '2rem'
         }
       },
       height: {
         96: '24rem'
+      },
+      minHeight: {
+        64: '16rem'
       },
       backgroundColor: {
         muted: '#dbdbdb',
