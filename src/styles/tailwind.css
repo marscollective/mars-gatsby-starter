@@ -7,13 +7,13 @@
     @apply bg-default font-body text-default leading-relaxed;
   }
   a {
-    @apply text-highLight transition-colors duration-500;
-    &:hover {
-      @apply text-default;
-    }
-    &.active {
-      @apply text-highLight;
-    }
+    @apply text-highlight transition-colors duration-500;
+  }
+  a:hover {
+    @apply text-default;
+  }
+  a.active {
+    @apply text-highlight;
   }
   h1,
   h2,
@@ -46,9 +46,9 @@
     hyphens: auto;
     -webkit-hyphens: auto;
     -ms-hyphens: auto;
-    &:last-of-type {
-      @apply m-0;
-    }
+  }
+  p:last-of-type {
+    @apply m-0;
   }
   ul,
   ol {

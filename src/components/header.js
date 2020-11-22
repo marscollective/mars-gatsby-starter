@@ -31,7 +31,7 @@ const Header = () => {
               to="/"
               alt="Home"
               activeClassName="active"
-              className="text-default hover:text-highLight"
+              className="text-default hover:text-highlight"
             >
               Home
             </Link>

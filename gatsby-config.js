@@ -26,6 +26,7 @@ module.exports = {
     `gatsby-plugin-catch-links`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
+    `gatsby-plugin-postcss`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -53,14 +54,6 @@ module.exports = {
               destinationDir: f => `static/${f.hash}/${f.name}`
             }
           }
-        ]
-      }
-    },
-    {
-      resolve: `gatsby-plugin-sass`,
-      options: {
-        postCssPlugins: [
-          require('tailwindcss')('./src/styles/tailwind.config.js')
         ]
       }
     },

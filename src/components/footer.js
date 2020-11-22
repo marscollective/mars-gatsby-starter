@@ -25,7 +25,7 @@ const Footer = () => {
     <footer className="container grid justify-items-center gap-4">
       <Social socialLinks={socialLinks} />
       <span className="text-center">
-        Made with <AiTwotoneHeart className="inline mb-1 text-highLight" /> and{' '}
+        Made with <AiTwotoneHeart className="inline mb-1 text-highlight" /> and{' '}
         <a
           href="https://gatsbyjs.org"
           alt="Gatsby"

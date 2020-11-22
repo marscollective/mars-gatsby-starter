@@ -29,7 +29,7 @@ const Social = ({ socialLinks }) => (
             title={label}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-default hover:text-highLight"
+            className="text-default hover:text-highlight"
           >
             <div>
               <Icon size="22px" />
