@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'gatsby'
-import Img from 'gatsby-image'
+import { Background } from '@components/image'
 
 const Posts = ({ posts, title }) => (
   <section className="container">
@@ -11,25 +11,28 @@ const Posts = ({ posts, title }) => (
           {
             node: {
               fields: { slug },
-              frontmatter: { date, image, title }
+              frontmatter: { date, image, title },
+              timeToRead
             }
           },
           i
         ) => (
-          <Link to={slug} alt={title} key={i}>
-            <div className="bg-muted">
-              <Img
-                fluid={image?.childImageSharp.fluid}
-                alt={title}
-                className="h-56"
-              />
-              <div className="grid gap-2 p-6">
-                <h3 className="text-default hover:text-highLight transition-colors duration-500 text-xl m-0">
-                  {title}
-                </h3>
-                <span className="text-highLight text-sm">{date}</span>
+          <Link
+            to={slug}
+            alt={title}
+            className="text-white hover:text-blue-300"
+            key={i}
+          >
+            <Background src={image} alt={title} className="h-96">
+              <div className="bg-gradient-to-t from-black to-transparent h-full">
+                <div className="absolute bottom-0 grid gap-2 p-10">
+                  <span className="text-sm">
+                    {date} - {timeToRead} minutes of reading
+                  </span>
+                  <h3 className="text-xl m-0">{title}</h3>
+                </div>
               </div>
-            </div>
+            </Background>
           </Link>
         )
       )}

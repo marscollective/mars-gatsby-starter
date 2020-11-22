@@ -30,6 +30,7 @@ const IndexPage = () => {
               fields {
                 slug
               }
+              timeToRead
             }
           }
         }
