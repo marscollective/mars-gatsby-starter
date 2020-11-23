@@ -3,11 +3,11 @@ backend:
   branch: main
 
   commit_messages:
-    create: ':pencil: Create “{{slug}}”'
-    update: ':pencil: Update “{{slug}}”'
-    delete: ':fire: Delete “{{slug}}”'
-    uploadMedia: ':bento: Upload “{{path}}” [skip ci]'
-    deleteMedia: ':fire: Delete “{{path}}” [skip ci]'
+    create: '📝 Create “{{slug}}”'
+    update: '📝 Update “{{slug}}”'
+    delete: '🔥 Delete “{{slug}}”'
+    uploadMedia: '🍱 Upload “{{path}}” [skip ci]'
+    deleteMedia: '🔥 Delete “{{path}}” [skip ci]'
 
 media_folder: content/assets
 public_folder: /assets
@@ -32,7 +32,7 @@ collections:
           label: Date,
           name: date,
           widget: datetime,
-          format: YYYY-MM-DD HH:mm:ss,
+          format: YYYY-MM-DD HH:mm:ss
         }
       - { label: Image, name: image, widget: image }
       - { label: Body, name: body, widget: markdown }
@@ -89,7 +89,7 @@ collections:
               - {
                   label: Background Color,
                   name: backgroundColor,
-                  widget: color,
+                  widget: color
                 }
               - { label: Theme Color, name: themeColor, widget: color }
           - { label: Lang, name: lang, widget: string }
@@ -104,7 +104,7 @@ collections:
                   name: label,
                   widget: select,
                   options:
-                    [Email, Facebook, Instagram, Messenger, Twitter, WhatsApp],
+                    [Email, Facebook, Instagram, Messenger, Twitter, WhatsApp]
                 }
 
               - { label: URL, name: url, widget: string }
