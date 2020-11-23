@@ -12,9 +12,6 @@ module.exports = {
       height: {
         96: '24rem'
       },
-      minHeight: {
-        64: '16rem'
-      },
       backgroundColor: {
         muted: '#dbdbdb',
         default: '#fafafa'
