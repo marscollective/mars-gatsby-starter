@@ -21,7 +21,7 @@ const IndexPage = () => {
                 title
                 image {
                   childImageSharp {
-                    fluid(maxWidth: 384, quality: 90) {
+                    fluid(maxWidth: 590, quality: 90) {
                       ...GatsbyImageSharpFluid_withWebp
                     }
                   }
@@ -39,7 +39,7 @@ const IndexPage = () => {
             title
             image {
               childImageSharp {
-                fluid(maxWidth: 640, quality: 90) {
+                fluid(maxWidth: 720, quality: 90) {
                   ...GatsbyImageSharpFluid_withWebp
                 }
               }
