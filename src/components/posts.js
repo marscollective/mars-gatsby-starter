@@ -25,11 +25,11 @@ const Posts = ({ posts, title }) => (
           >
             <Background src={image} alt={title} className="h-96">
               <div className="bg-gradient-to-t from-black to-transparent h-full">
-                <div className="absolute bottom-0 grid gap-2 p-10">
-                  <span className="text-sm">
-                    {date} - {timeToRead} minutes of reading
-                  </span>
+                <div className="absolute bottom-0 p-10">
                   <h3 className="text-xl m-0">{title}</h3>
+                  <span className="text-sm">
+                    {date} - {timeToRead} min. of reading
+                  </span>
                 </div>
               </div>
             </Background>
