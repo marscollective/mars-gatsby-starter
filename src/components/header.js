@@ -1,7 +1,22 @@
-import React from 'react'
-import { useStaticQuery, graphql } from 'gatsby'
-import { Link } from 'gatsby'
+import React, { useState } from 'react'
+import { useStaticQuery, graphql, Link } from 'gatsby'
+import { FiMenu } from 'react-icons/fi'
 import logo from '@assets/logo.svg'
+
+const Links = [
+  {
+    label: 'Home',
+    url: '/'
+  },
+  {
+    label: 'Blog',
+    url: '/'
+  },
+  {
+    label: 'Contact',
+    url: '/'
+  }
+]
 
 const Header = () => {
   const { site } = useStaticQuery(
@@ -17,28 +32,36 @@ const Header = () => {
   )
 
   const title = site.siteMetadata.title
+  const [menuOpen, setMenuOpen] = useState(false)
 
   return (
-    <header>
-      <div className="container">
-        <div className="flex justify-between items-center">
+    <nav className="bg-gray-200">
+      <div className="container my-0 py-8 lg:flex lg:justify-between">
+        <div className="flex">
+          <button
+            className="mr-4 outline-none focus:outline-none lg:hidden"
+            onClick={() => setMenuOpen(!menuOpen)}
+          >
+            <FiMenu size="20px" />
+          </button>
           <Link to="/" alt="Home">
-            <img src={logo} alt={title} width="160" height="44" />
+            <img src={logo} alt={title} width="72" />
           </Link>
-
-          <div className="flex space-x-8">
-            <Link
-              to="/"
-              alt="Home"
-              activeClassName="active"
-              className="text-default hover:text-highlight"
-            >
-              Home
-            </Link>
-          </div>
         </div>
+        <ul
+          className={
+            'm-0 mt-6 p-0 list-none space-y-4 lg:inline-flex lg:space-y-0 lg:space-x-6 lg:m-0 ' +
+            (menuOpen ? 'block' : 'hidden')
+          }
+        >
+          {Links.map(({ label, url }, i) => (
+            <li key={i}>
+              <Link to={url}>{label}</Link>
+            </li>
+          ))}
+        </ul>
       </div>
-    </header>
+    </nav>
   )
 }
 
