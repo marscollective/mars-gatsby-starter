@@ -17,7 +17,7 @@ const IndexPage = () => {
               image {
                 childImageSharp {
                   fluid(maxWidth: 1920, quality: 90) {
-                    ...GatsbyImageSharpFluid_withWebp
+                    ...GatsbyImageSharpFluid_withWebp_tracedSVG
                   }
                 }
               }
@@ -38,7 +38,7 @@ const IndexPage = () => {
                 image {
                   childImageSharp {
                     fluid(maxWidth: 590, quality: 90) {
-                      ...GatsbyImageSharpFluid_withWebp
+                      ...GatsbyImageSharpFluid_withWebp_tracedSVG
                     }
                   }
                 }
@@ -56,7 +56,7 @@ const IndexPage = () => {
             image {
               childImageSharp {
                 fluid(maxWidth: 720, quality: 90) {
-                  ...GatsbyImageSharpFluid_withWebp
+                  ...GatsbyImageSharpFluid_withWebp_tracedSVG
                 }
               }
             }
