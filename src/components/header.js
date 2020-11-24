@@ -10,11 +10,11 @@ const Links = [
   },
   {
     label: 'Blog',
-    url: '/'
+    url: '/blog/'
   },
   {
     label: 'Contact',
-    url: '/'
+    url: '/contact/'
   }
 ]
 
@@ -56,7 +56,9 @@ const Header = () => {
         >
           {Links.map(({ label, url }, i) => (
             <li key={i}>
-              <Link to={url}>{label}</Link>
+              <Link to={url} activeClassName="active" alt={label}>
+                {label}
+              </Link>
             </li>
           ))}
         </ul>

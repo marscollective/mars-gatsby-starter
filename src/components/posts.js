@@ -1,8 +1,9 @@
 import React from 'react'
 import { Link } from 'gatsby'
 import { Background } from '@components/image'
+import Button from '@components/button'
 
-const Posts = ({ posts, title }) => (
+const Posts = ({ more, posts, title }) => (
   <section className="container">
     <h2 className="mb-8">{title}</h2>
     <div className="grid gap-4 md:gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
@@ -37,6 +38,13 @@ const Posts = ({ posts, title }) => (
         )
       )}
     </div>
+    {more && (
+      <div className="grid place-items-center mt-8">
+        <Link to="/blog/" alt="Blog">
+          <Button>More posts</Button>
+        </Link>
+      </div>
+    )}
   </section>
 )
 

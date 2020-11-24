@@ -13,7 +13,7 @@
     @apply text-default;
   }
   a.active {
-    @apply text-highlight;
+    @apply text-highlight underline;
   }
   h1,
   h2,

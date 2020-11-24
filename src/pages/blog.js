@@ -3,16 +3,14 @@ import { useStaticQuery, graphql } from 'gatsby'
 import Layout from '@layout'
 import SEO from '@seo'
 import Posts from '@components/posts'
-import Contact from '@components/contact'
 
-const IndexPage = () => {
+const BlogPage = () => {
   const data = useStaticQuery(
     graphql`
       query {
         posts: allMarkdownRemark(
           filter: { frontmatter: { key: { eq: "blog-post" } } }
           sort: { fields: frontmatter___date, order: DESC }
-          limit: 3
         ) {
           edges {
             node {
@@ -35,33 +33,18 @@ const IndexPage = () => {
             }
           }
         }
-        contact: markdownRemark(frontmatter: { key: { eq: "contact" } }) {
-          frontmatter {
-            title
-            image {
-              childImageSharp {
-                fluid(maxWidth: 720, quality: 90) {
-                  ...GatsbyImageSharpFluid_withWebp
-                }
-              }
-            }
-          }
-        }
       }
     `
   )
 
   const posts = data.posts.edges
-  const contact = data.contact.frontmatter
-  const { image, title } = contact
 
   return (
     <Layout>
       <SEO title="Home" />
-      <Posts title="Blog" posts={posts} more />
-      <Contact title={title} image={image} />
+      <Posts title="Blog" posts={posts} />
     </Layout>
   )
 }
 
-export default IndexPage
+export default BlogPage
