@@ -47,7 +47,12 @@ collections:
     sortable_fields: [title, date]
     path: '{{slug}}/index'
     fields:
-      - { label: Place, name: key, widget: select, options: [Home, Blog] }
+      - {
+          label: Place,
+          name: key,
+          widget: select,
+          options: [Home, Blog, Contact]
+        }
       - { label: Title, name: title, widget: string }
       - { label: Image, name: image, widget: image }
 

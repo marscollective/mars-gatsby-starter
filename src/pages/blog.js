@@ -2,12 +2,31 @@ import React from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
 import Layout from '@layout'
 import SEO from '@seo'
+import { Banners } from '@components/banners'
 import Posts from '@components/posts'
 
 const BlogPage = () => {
   const data = useStaticQuery(
     graphql`
       query {
+        banners: allMarkdownRemark(
+          filter: { frontmatter: { key: { eq: "Blog" } } }
+        ) {
+          edges {
+            node {
+              frontmatter {
+                title
+                image {
+                  childImageSharp {
+                    fluid(maxWidth: 1920, quality: 90) {
+                      ...GatsbyImageSharpFluid_withWebp
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
         posts: allMarkdownRemark(
           filter: { frontmatter: { key: { eq: "blog-post" } } }
           sort: { fields: frontmatter___date, order: DESC }
@@ -37,12 +56,14 @@ const BlogPage = () => {
     `
   )
 
+  const banners = data.banners.edges
   const posts = data.posts.edges
 
   return (
     <Layout>
       <SEO title="Home" />
-      <Posts title="Blog" posts={posts} />
+      <Banners banners={banners} />
+      <Posts posts={posts} />
     </Layout>
   )
 }
