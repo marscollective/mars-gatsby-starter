@@ -35,7 +35,7 @@ const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false)
 
   return (
-    <nav className="bg-gray-200">
+    <nav className="sticky top-0 z-50 bg-gray-200 bg-opacity-95">
       <div className="container my-0 py-8 lg:flex lg:justify-between">
         <div className="flex">
           <button
