@@ -97,7 +97,7 @@ module.exports = {
       options: {
         htmlTitle: `Content Manager`,
         htmlFavicon: `content/settings/${favicon}`,
-        modulePath: `${__dirname}/src/cms/cms.js`
+        modulePath: `${__dirname}/src/cms`
       }
     }
   ]

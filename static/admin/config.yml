@@ -37,6 +37,20 @@ collections:
       - { label: Image, name: image, widget: image }
       - { label: Body, name: body, widget: markdown }
 
+  - name: banners
+    label: Banners
+    label_singular: banner
+    folder: content/banners
+    create: true
+    media_folder: ''
+    public_folder: ''
+    sortable_fields: [title, date]
+    path: '{{slug}}/index'
+    fields:
+      - { label: Place, name: key, widget: select, options: [Home, Blog] }
+      - { label: Title, name: title, widget: string }
+      - { label: Image, name: image, widget: image }
+
   - name: sections
     label: Sections
     media_folder: ''
