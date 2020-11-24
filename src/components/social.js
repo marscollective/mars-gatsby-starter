@@ -5,7 +5,7 @@ import {
   FaInstagram as Instagram,
   FaFacebookMessenger as Messenger,
   FaTwitter as Twitter,
-  FaWhatsapp as Whatsapp
+  FaWhatsapp as WhatsApp
 } from 'react-icons/fa'
 
 const Icons = {
@@ -14,7 +14,7 @@ const Icons = {
   Instagram,
   Messenger,
   Twitter,
-  Whatsapp
+  WhatsApp
 }
 
 const Social = ({ socialLinks }) => (

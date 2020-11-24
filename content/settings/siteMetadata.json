@@ -11,7 +11,7 @@
     { "label": "Facebook", "url": "https://facebook.com" },
     { "label": "Instagram", "url": "https://www.instagram.com" },
     { "label": "Twitter", "url": "https://twitter.com" },
-    { "label": "Whatsapp", "url": "https://api.whatsapp.com/send?phone=55" },
+    { "label": "WhatsApp", "url": "https://api.whatsapp.com/send?phone=55" },
     { "label": "Email", "url": "mailto:hi@example.com" }
   ]
 }
