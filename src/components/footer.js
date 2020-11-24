@@ -1,7 +1,6 @@
 import React from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
 import Social from '@components/social'
-import { AiTwotoneHeart } from 'react-icons/ai'
 
 const Footer = () => {
   const { site } = useStaticQuery(
@@ -9,6 +8,7 @@ const Footer = () => {
       query {
         site {
           siteMetadata {
+            title
             socialLinks {
               label
               url
@@ -19,31 +19,14 @@ const Footer = () => {
     `
   )
 
-  const socialLinks = site.siteMetadata.socialLinks
+  const data = site.siteMetadata
+  const { title, socialLinks } = data
 
   return (
-    <footer className="container grid justify-items-center gap-4">
+    <footer className="container grid justify-items-center gap-6 text-center">
       <Social socialLinks={socialLinks} />
-      <span className="text-center">
-        Made with <AiTwotoneHeart className="inline mb-1 text-highlight" /> and{' '}
-        <a
-          href="https://gatsbyjs.org"
-          alt="Gatsby"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Gatsby
-        </a>
-        <br />
-        by{' '}
-        <a
-          href="https://marscollective.co"
-          alt="Mars Collective"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Mars Collective
-        </a>
+      <span>
+        {new Date().getFullYear()} &copy; {title}
       </span>
     </footer>
   )
