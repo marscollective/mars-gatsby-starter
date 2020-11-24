@@ -28,7 +28,7 @@ const Posts = ({ posts, title }) => (
                 <div className="absolute bottom-0 p-10">
                   <h3 className="text-xl m-0">{title}</h3>
                   <span className="text-sm">
-                    {date} - {timeToRead} min. of reading
+                    {date} · {timeToRead} min read
                   </span>
                 </div>
               </div>
