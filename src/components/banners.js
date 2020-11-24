@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { Background } from '@components/image'
 
 export const Banner = ({ image, title }) => (
@@ -11,10 +11,36 @@ export const Banner = ({ image, title }) => (
   </Background>
 )
 
-export const Banners = ({ banners }) => (
-  <>
-    {banners.map(({ node: { frontmatter: { image, title } } }, i) => (
-      <Banner image={image} title={title} key={i} />
-    ))}
-  </>
-)
+export const Banners = ({ banners }) => {
+  const [curr, setCurr] = useState(0)
+  const { length } = banners
+
+  const goToNext = () => {
+    setCurr(curr === length - 1 ? 0 : curr + 1)
+  }
+
+  useEffect(() => {
+    setTimeout(goToNext, 5000)
+    return function () {
+      clearTimeout(goToNext)
+    }
+  })
+
+  return (
+    <div className="bg-black">
+      {banners &&
+        banners.map(({ node: { frontmatter: { image, title } } }, i) => (
+          <div
+            className={
+              'transition-opacity duration-500 opacity-0 ' +
+              (i === curr && 'opacity-100')
+            }
+            key={title}
+            // aria-hidden={i !== curr}
+          >
+            {i === curr && <Banner image={image} title={title} />}
+          </div>
+        ))}
+    </div>
+  )
+}
