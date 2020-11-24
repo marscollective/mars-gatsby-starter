@@ -37,31 +37,36 @@ collections:
       - { label: Image, name: image, widget: image }
       - { label: Body, name: body, widget: markdown }
 
-  - name: banners
-    label: Banners
-    label_singular: banner
-    folder: content/banners
-    create: true
-    media_folder: ''
-    public_folder: ''
-    sortable_fields: [title, date]
-    path: '{{slug}}/index'
-    fields:
-      - {
-          label: Place,
-          name: key,
-          widget: select,
-          options: [Home, Blog, Contact]
-        }
-      - { label: Title, name: title, widget: string }
-      - { label: Image, name: image, widget: image }
-
   - name: sections
     label: Sections
     media_folder: ''
     public_folder: ''
     sortable_fields: []
     files:
+      - file: content/sections/banners/index.md
+        label: Banners
+        name: banners
+        fields:
+          - { label: key, name: key, widget: hidden, default: banners }
+          - label: Home
+            name: bannerHome
+            widget: list
+            fields:
+              - { label: Title, name: title, widget: string }
+              - { label: Image, name: image, widget: image }
+          - label: Blog
+            name: bannerBlog
+            widget: list
+            fields:
+              - { label: Title, name: title, widget: string }
+              - { label: Image, name: image, widget: image }
+          - label: Contact
+            name: bannerContact
+            widget: list
+            fields:
+              - { label: Title, name: title, widget: string }
+              - { label: Image, name: image, widget: image }
+
       - file: content/sections/contact/index.md
         label: Contact
         name: contact
@@ -125,5 +130,4 @@ collections:
                   options:
                     [Email, Facebook, Instagram, Messenger, Twitter, WhatsApp]
                 }
-
               - { label: URL, name: url, widget: string }

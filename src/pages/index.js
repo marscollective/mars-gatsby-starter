@@ -10,18 +10,14 @@ const IndexPage = () => {
   const data = useStaticQuery(
     graphql`
       query {
-        banners: allMarkdownRemark(
-          filter: { frontmatter: { key: { eq: "Home" } } }
-        ) {
-          edges {
-            node {
-              frontmatter {
-                title
-                image {
-                  childImageSharp {
-                    fluid(maxWidth: 1920, quality: 90) {
-                      ...GatsbyImageSharpFluid_withWebp
-                    }
+        banners: markdownRemark(frontmatter: { key: { eq: "banners" } }) {
+          frontmatter {
+            bannerHome {
+              title
+              image {
+                childImageSharp {
+                  fluid(maxWidth: 1920, quality: 90) {
+                    ...GatsbyImageSharpFluid_withWebp
                   }
                 }
               }
@@ -70,7 +66,7 @@ const IndexPage = () => {
     `
   )
 
-  const banners = data.banners.edges
+  const banners = data.banners.frontmatter.bannerHome
   const posts = data.posts.edges
   const contact = data.contact.frontmatter
   const { image, title } = contact
@@ -78,7 +74,7 @@ const IndexPage = () => {
   return (
     <Layout>
       <SEO title="Home" />
-      <Banners banners={banners} />
+      <Banners data={banners} />
       <Posts title="Blog" posts={posts} more />
       <Contact title={title} image={image} />
     </Layout>

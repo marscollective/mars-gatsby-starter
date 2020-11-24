@@ -11,9 +11,9 @@ export const Banner = ({ image, title }) => (
   </Background>
 )
 
-export const Banners = ({ banners }) => {
+export const Banners = ({ data }) => {
   const [curr, setCurr] = useState(0)
-  const { length } = banners
+  const { length } = data
 
   const goToNext = () => {
     setCurr(curr === length - 1 ? 0 : curr + 1)
@@ -28,17 +28,26 @@ export const Banners = ({ banners }) => {
 
   return (
     <div className="bg-black">
-      {banners &&
-        banners.map(({ node: { frontmatter: { image, title } } }, i) => (
+      {data &&
+        data.map(({ image, title }, i) => (
           <div
             className={
               'transition-opacity duration-500 opacity-0 ' +
               (i === curr && 'opacity-100')
             }
             key={title}
-            // aria-hidden={i !== curr}
           >
-            {i === curr && <Banner image={image} title={title} />}
+            {i === curr && (
+              <Background src={image}>
+                <div className="bg-gradient-to-t from-black to-transparent h-full">
+                  <div className="container my-0">
+                    <h1 className="text-white text-center m-0 py-64">
+                      {title}
+                    </h1>
+                  </div>
+                </div>
+              </Background>
+            )}
           </div>
         ))}
     </div>
