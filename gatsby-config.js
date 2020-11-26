@@ -1,4 +1,4 @@
-const settings = require(`./content/settings`)
+const Metadata = require(`./content/metadata`)
 const {
   title,
   shortTitle,
@@ -9,7 +9,7 @@ const {
   gtmID,
   socialLinks,
   pwaColors: { backgroundColor, themeColor }
-} = settings
+} = Metadata
 
 module.exports = {
   siteMetadata: {
@@ -63,10 +63,12 @@ module.exports = {
       options: {
         alias: {
           '@assets': 'content/assets',
+          '@collections': 'src/cms/collections',
           '@components': 'src/components',
           '@layout': 'src/components/layout',
           '@seo': 'src/components/seo',
-          '@styles': 'src/styles'
+          '@styles': 'src/styles',
+          '@templates': 'src/cms/templates'
         }
       }
     },
@@ -79,7 +81,7 @@ module.exports = {
         background_color: backgroundColor,
         theme_color: themeColor,
         display: `fullscreen`,
-        icon: `content/settings/${favicon}`,
+        icon: `content/metadata/${favicon}`,
         icon_options: {
           purpose: `maskable`
         }
@@ -97,8 +99,9 @@ module.exports = {
       resolve: `gatsby-plugin-netlify-cms`,
       options: {
         htmlTitle: `Content Manager`,
-        htmlFavicon: `content/settings/${favicon}`,
-        modulePath: `${__dirname}/src/cms`
+        htmlFavicon: `content/metadata/${favicon}`,
+        modulePath: `${__dirname}/src/cms`,
+        manualInit: true
       }
     }
   ]

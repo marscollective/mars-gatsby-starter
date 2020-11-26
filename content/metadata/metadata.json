@@ -6,6 +6,7 @@
   "favicon": "icon.png",
   "pwaColors": { "backgroundColor": "#fafafa", "themeColor": "#0d3770" },
   "lang": "en",
+  "cmsLang": "en",
   "gtmID": "GTM-XXXXXX",
   "socialLinks": [
     { "label": "Facebook", "url": "https://facebook.com" },
