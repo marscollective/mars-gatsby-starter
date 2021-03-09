@@ -14,7 +14,7 @@
   },
   "dependencies": {
     "autoprefixer": "^10.2.5",
-    "gatsby": "^2.32.9",
+    "gatsby": "^2.32.10",
     "gatsby-background-image": "^1.4.1",
     "gatsby-image": "^3.0.0",
     "gatsby-plugin-alias-imports": "^1.0.5",
